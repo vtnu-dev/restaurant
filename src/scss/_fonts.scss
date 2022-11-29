@@ -1,0 +1,38 @@
+
+@import '_mixins/font-face.scss';
+
+// Poppins
+@include font-face("Forever Brush Script", "../fonts/ForeverBrushScript/ForeverBrushScript", 400);
+@include font-face("Proxima Nova", "../fonts/ProximaNova/proximanova_light", 300);
+@include font-face("Proxima Nova", "../fonts/ProximaNova/proximanova_regular", 400);
+@include font-face("Roboto", "../fonts/Roboto/Roboto-Regular", 400);
+@include font-face("Roboto", "../fonts/Roboto/Roboto-Bold", 700);
+
+// Poppins
+@mixin font-foreverbrushscript-regular {
+	font-family: 'Forever Brush Script', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@mixin font-proximanova-light {
+	font-family: 'Proxima Nova', sans-serif;
+	font-weight: 300;
+	font-style: normal;
+}
+@mixin font-proximanova-regular {
+	font-family: 'Proxima Nova', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@mixin font-roboto-regular {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+@mixin font-roboto-bold {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	font-style: normal;
+}

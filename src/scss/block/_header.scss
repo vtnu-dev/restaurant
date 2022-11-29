@@ -1,0 +1,166 @@
+// Header
+.header__container {
+	max-width: 1250px;
+}
+
+// Navbar
+nav {
+   position: absolute;
+   left: 0;
+	right: 0;
+	overflow: hidden;
+   transition: all .3s;
+}
+
+// Navbar fixed
+.fixed__nav {
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.7);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+	z-index: 111;
+
+	.navbar {
+		min-height: 40px;
+	}
+}
+
+.navbar {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	min-height: 145px;
+}
+
+.logo {
+	a {
+		@include font(3.1rem, 3.2rem);
+		color: white;
+	}
+}
+
+.menu {
+	display: flex;
+
+	// .menu__item
+	&__item {
+		margin-left: 50px;
+		transition: text-decoration 0.3s;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	// .menu__item-link
+	&__item-link {
+		color: #ffffff;
+		//font-size: 1.6rem;
+	}
+}
+
+.burger {
+	display: none;
+	cursor: pointer;
+}
+
+// Burger menu styles
+@media screen and (max-width: $burgerBreakpoint) {
+	// .menu
+	.menu {
+		position: fixed;
+		background: #131418;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100vw;
+		display: none;
+
+		&.active {
+			display: flex;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 100vw;
+			flex-direction: column;
+			pointer-events: all;
+			justify-content: center;
+			align-items: center;
+			z-index: 22;
+			animation: fade 0.1s linear;
+		}
+	}
+
+	// .burger
+	.burger {
+		display: block;
+		position: relative;
+		height: 20px;
+		width: 30px;
+		z-index: 102;
+		cursor: pointer;
+
+		&.active-burger {
+			&:before {
+				background: $burgerActiveColor;
+				transform: rotate(45deg);
+				transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+				top: 8px;
+			}
+
+			&:after {
+				background: $burgerActiveColor;
+				transform: rotate(-45deg);
+				bottom: 10px;
+				transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+			}
+
+			& span {
+				transform: scale(0);
+			}
+		}
+
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			height: 2px;
+			width: 100%;
+			background: $burgerColor;
+			transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+		}
+
+		&:before {
+			top: 0;
+		}
+
+		&::after {
+			bottom: 0;
+		}
+
+		span {
+			position: absolute;
+			top: 9px;
+			right: 0;
+			width: 100%;
+			background: $burgerColor;
+			height: 2px;
+			transform: scale(1);
+			transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+		}
+	}
+
+	// .menu__item
+	.menu__item {
+		margin-top: 15px;
+		margin-left: 0px;
+		font-size: 2rem;
+	}
+
+	// .menu__link
+	.menu__item-link {
+		color: white;
+	}
+}

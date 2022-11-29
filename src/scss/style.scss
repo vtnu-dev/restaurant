@@ -1,0 +1,64 @@
+// Global SCSS-files imports
+@import 'vars';
+@import 'reset';
+@import 'global';
+@import 'fonts';
+
+//================================================================================//
+@import '_mixins/reset';
+@import '_mixins/media';
+@import '_mixins/container';
+@import '_mixins/flex';
+/*==============================================================================*/
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: $font-family-base;
+	font-style: $font-style-base;
+   font-size: $font-size-base;
+	line-height: $line-height-base;
+	color: $color-text-white;
+}
+
+.heading {
+	&__text {
+		max-width: 550px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		padding: 0 20px;
+
+		@include media-max(991.98px) {
+			margin: 0px 0px 55px 0px;
+		}
+	}
+
+	&__text-title {
+		@include font-foreverbrushscript-regular;
+		@include font(5.6rem, 5.8rem);
+	}
+
+	&__text-line {
+		margin: 20px 0px 0px 0px;
+		width: 108px;
+		height: 2px;
+		background-color: #ffffff;
+
+	}
+
+	&__text-description {
+		margin: 55px 0px 0px 0px;
+		@include font(1.8rem, 3.2rem);
+	}
+}
+
+
+// Libs
+@import 'libs/swiper';
+@import 'block/*.scss';

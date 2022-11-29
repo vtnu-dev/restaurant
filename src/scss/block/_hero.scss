@@ -1,0 +1,40 @@
+.hero {
+	background: url('../img/hero/hero-bg.jpg') center / cover no-repeat;
+	height: 100vh;
+
+	&__container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+	}
+
+	&__heading {
+		max-width: 713px;
+		width: 100%;
+		text-align: center;
+	}
+
+	&__heading-title {
+		@include font(7.2rem, 4.9rem);
+		font-weight: 300;
+		text-transform: uppercase;
+
+		@include media-max(991.98px) {
+			@include font(5.2rem, 4rem);
+		}
+
+		@include media-max(767.98px) {
+         @include font(3.2rem, 3.4rem);
+		}
+      
+      @include media-max(479.98px) {
+         @include font(2.8rem, 3rem);
+      };
+	}
+
+	&__heading-description {
+		@include font(1.8rem, 3.2rem);
+		margin: 50px 0px 0px 0px;
+	}
+}
